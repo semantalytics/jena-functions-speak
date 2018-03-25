@@ -24,13 +24,6 @@ com.semantalytics.stardog.kibble.file.Save
 com.semantalytics.stardog.kibble.file.Sha1
 com.semantalytics.stardog.kibble.file.Sha512
 com.semantalytics.stardog.kibble.file.Size
-com.semantalytics.stardog.kibble.geo.hash.AddLatitude
-com.semantalytics.stardog.kibble.geo.hash.AddLongitude
-com.semantalytics.stardog.kibble.geo.hash.Bottom
-com.semantalytics.stardog.kibble.geo.hash.Encode
-com.semantalytics.stardog.kibble.geo.hash.Latitude
-com.semantalytics.stardog.kibble.geo.hash.Longitude
-com.semantalytics.stardog.kibble.javascript.Execute
 com.semantalytics.stardog.kibble.jdbc.DatabaseMajorVersion
 com.semantalytics.stardog.kibble.jdbc.DatabaseMinorVersion
 com.semantalytics.stardog.kibble.jdbc.DatabaseProductName
