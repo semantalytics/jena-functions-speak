@@ -6,14 +6,16 @@ import org.openrdf.query.TupleQueryResult;
 
 import static org.junit.Assert.*;
 
-public class IndexTest  extends AbstractStardogTest {
+public class TestFromSpokenTime extends AbstractStardogTest {
 
+
+  
     @Test
-    public void testQuarter() throws Exception {
+    public void testFromSpokenTime() throws Exception {
 
-      
-            final String aQuery = "prefix date: <" + UtilVocabulary.NAMESPACE + ">" +
-                    "select ?result where { bind(date:quarter(\"2017-09-01\"^^xsd:date) as ?result) }";
+           
+            final String aQuery = "prefix util: <" + UtilVocabulary.NAMESPACE + ">" +
+                    "select ?result where { bind(util:fromSpokenTime(\"next week\") as ?result) }";
 
             try (final TupleQueryResult aResult = connection.select(aQuery).execute()) {
 

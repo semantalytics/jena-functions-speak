@@ -13,7 +13,7 @@ import java.util.GregorianCalendar;
 public class Sleep extends AbstractFunction implements UserDefinedFunction {
 
     protected Sleep() {
-        super(1, "http://semantalytics.com/2016/03/ns/stardog/udf/util/sleep");
+        super(1, UtilVocabulary.sleep.stringValue());
     }
 
     public Sleep(final Sleep sleep) {

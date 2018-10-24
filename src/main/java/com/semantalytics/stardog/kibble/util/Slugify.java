@@ -19,7 +19,7 @@ public class Slugify extends AbstractFunction implements UserDefinedFunction {
     }
 
     protected Slugify() {
-        super(1, "http://semantalytics.com/2016/03/ns/stardog/udf/util/slugify");
+        super(1, UtilVocabulary.slugify.stringValue());
     }
 
     public Slugify(final Slugify slugify) {

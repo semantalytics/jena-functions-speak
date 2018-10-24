@@ -15,8 +15,15 @@ public enum UtilVocabulary {
     proquint,
     sayNumericOrdinal,
     sayNumber,
+    sayOrdinal,
+    sayTime,
+    sleep,
+    slugify,
+    slugifyCaseInsensitive,
     stardogVersion,
+    dateTimeFormat,
     fromSpokenTime,
+    timeFromNow,
     user,
     databaseName;
 

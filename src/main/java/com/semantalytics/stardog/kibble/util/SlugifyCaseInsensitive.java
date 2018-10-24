@@ -5,6 +5,7 @@ import com.complexible.stardog.plan.filter.ExpressionVisitor;
 import com.complexible.stardog.plan.filter.functions.AbstractFunction;
 import com.complexible.stardog.plan.filter.functions.Function;
 import com.complexible.stardog.plan.filter.functions.UserDefinedFunction;
+import com.semantalytics.stardog.kibble.util.UtilVocabulary;
 import org.openrdf.model.Value;
 
 public class SlugifyCaseInsensitive extends AbstractFunction implements UserDefinedFunction {
@@ -17,7 +18,7 @@ public class SlugifyCaseInsensitive extends AbstractFunction implements UserDefi
     }
 
     protected SlugifyCaseInsensitive() {
-        super(1, "http://semantalytics.com/2016/03/ns/stardog/udf/util/slugify");
+        super(1, UtilVocabulary.slugifyCaseInsensitive.stringValue());
     }
 
     public SlugifyCaseInsensitive(final SlugifyCaseInsensitive slugify) {

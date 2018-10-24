@@ -13,7 +13,7 @@ import java.util.Locale;
 public class SayOrdinal extends AbstractFunction implements UserDefinedFunction {
 
     public SayOrdinal() {
-        super(1, "http://semantalytics.com/2016/03/ns/stardog/udf/util/sayTime");
+        super(1, UtilVocabulary.sayOrdinal.stringValue());
     }
 
     private SayOrdinal(final SayOrdinal sayOrdinal) {
