@@ -1,4 +1,4 @@
-package com.semantalytics.stardog.kibble.util;
+package com.semantalytics.stardog.kibble.say;
 
 import com.semantalytics.stardog.kibble.AbstractStardogTest;
 import org.junit.Test;
@@ -12,8 +12,8 @@ public class TestIndex  extends AbstractStardogTest {
     
      
 
-            final String aQuery = "prefix util: + <" + UtilVocabulary.NAMESPACE + "> " +
-                    "select ?result where { bind(util:index(?v) as ?result) values ?v {1 2 3 4 5} } order by ?v";
+            final String aQuery = "prefix say: + <" + UtilVocabulary.NAMESPACE + "> " +
+                    "select ?result where { bind(say:index(?v) as ?result) values ?v {1 2 3 4 5} } order by ?v";
 
             final TupleQueryResult aResult = connection.select(aQuery).execute();
 

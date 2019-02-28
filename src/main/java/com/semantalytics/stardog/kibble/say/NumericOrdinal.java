@@ -1,4 +1,4 @@
-package com.semantalytics.stardog.kibble.util;
+package com.semantalytics.stardog.kibble.say;
 
 import com.complexible.stardog.plan.filter.ExpressionEvaluationException;
 import com.complexible.stardog.plan.filter.ExpressionVisitor;
@@ -7,26 +7,24 @@ import com.complexible.stardog.plan.filter.functions.Function;
 import com.complexible.stardog.plan.filter.functions.UserDefinedFunction;
 import org.openrdf.model.Value;
 
-import static com.complexible.common.rdf.model.Values.literal;
+public class NumericOrdinal extends AbstractFunction implements UserDefinedFunction {
 
-public class StardogVersion extends AbstractFunction implements UserDefinedFunction {
-
-    protected StardogVersion() {
-        super(0, UtilVocabulary.stardogVersion.stringValue());
+    protected NumericOrdinal() {
+        super(1, SayVocabulary.numericOrdinal.stringValue());
     }
 
-    public StardogVersion(final StardogVersion stardogVersion) {
-        super(stardogVersion);
+    public NumericOrdinal(final NumericOrdinal numericOrdinal) {
+        super(numericOrdinal);
     }
 
     @Override
     protected Value internalEvaluate(final Value... values) throws ExpressionEvaluationException {
-        return literal(com.complexible.stardog.StardogVersion.VERSION);
+        return null;
     }
 
     @Override
-    public StardogVersion copy() {
-        return new StardogVersion(this);
+    public Function copy() {
+        return new NumericOrdinal(this);
     }
 
     @Override
@@ -36,6 +34,6 @@ public class StardogVersion extends AbstractFunction implements UserDefinedFunct
 
     @Override
     public String toString() {
-        return UtilVocabulary.stardogVersion.name();
+        return SayVocabulary.numericOrdinal.name();
     }
 }

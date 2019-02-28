@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.semantalytics.stardog</groupId>
-    <artifactId>kibbles-util</artifactId>
+    <artifactId>kibbles-speak</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <developers>
@@ -27,8 +27,8 @@
     <scm>
         <url>http://github.com/semantalytics-stardog</url>
         <tag>HEAD</tag>
-        <connection>scm:git:http://github.com/semantalytics-stardog/kibbles-util</connection>
-        <developerConnection>scm:git:http://github.com/semantalytics-stardog/kibbles-util</developerConnection>
+        <connection>scm:git:http://github.com/semantalytics-stardog/kibbles-speak</connection>
+        <developerConnection>scm:git:http://github.com/semantalytics-stardog/kibbles-speak</developerConnection>
     </scm>
 
     <licenses>
@@ -48,7 +48,6 @@
         <stardog.major.version>5</stardog.major.version>
         <stardog.version>${stardog.major.version}.3.5</stardog.version>
         <icu4j.version>2.6.1</icu4j.version>
-        <slugify.version>2.1.9</slugify.version>
         <moneta.version>1.1</moneta.version>
         <threeten-extra.version>1.2</threeten-extra.version>
         <tradukisto.version>1.0.0</tradukisto.version>
@@ -58,13 +57,8 @@
         <prettytime.version>4.0.0.Final</prettytime.version>
         <prettytime-nlp.version>3.2.1.Final</prettytime-nlp.version>
         <maven.version>3.3.9</maven.version>
-        <jansi.version>1.16</jansi.version>
         <uima.version>2.8.1</uima.version>
         <heideltime.version>2.2.1</heideltime.version>
-        <emoji4j.version>5.0</emoji4j.version>
-        <guava.version>23.3-jre</guava.version>
-        <jhardware.version>0.8.5</jhardware.version>
-        <oshi.version>3.4.4</oshi.version>
         <evo-inflector.version>1.2.2</evo-inflector.version>
     </properties>
 
@@ -73,21 +67,6 @@
             <groupId>org.atteo</groupId>
             <artifactId>evo-inflector</artifactId>
             <version>${evo-inflector.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jhardware</groupId>
-            <artifactId>jHardware</artifactId>
-            <version>${jhardware.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.kcthota</groupId>
-            <artifactId>emoji4j</artifactId>
-            <version>${emoji4j.version}</version>
         </dependency>
         <dependency>
             <groupId>edu.stanford.nlp</groupId>
@@ -113,11 +92,6 @@
             <groupId>org.javamoney</groupId>
             <artifactId>moneta</artifactId>
             <version>${moneta.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.slugify</groupId>
-            <artifactId>slugify</artifactId>
-            <version>${slugify.version}</version>
         </dependency>
         <dependency>
             <groupId>com.ibm.icu</groupId>
@@ -193,7 +167,7 @@
         </dependency>
         <dependency>
             <groupId>com.complexible.stardog.utils</groupId>
-            <artifactId>stardog-utils-rdf</artifactId>
+            <artifactId>stardog-speaks-rdf</artifactId>
             <version>${stardog.version}</version>
         </dependency>
         <dependency>

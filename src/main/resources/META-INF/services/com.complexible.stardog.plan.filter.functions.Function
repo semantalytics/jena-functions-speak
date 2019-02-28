@@ -1,1 +1,6 @@
-com.semantalytics.stardog.kibble.util.Ordinalize
+com.semantalytics.stardog.kibble.say.Number
+com.semantalytics.stardog.kibble.say.NumericOrdinal
+com.semantalytics.stardog.kibble.say.Ordinal
+com.semantalytics.stardog.kibble.say.PreciseTime
+com.semantalytics.stardog.kibble.say.Time
+

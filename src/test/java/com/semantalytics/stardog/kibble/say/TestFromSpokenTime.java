@@ -1,4 +1,4 @@
-package com.semantalytics.stardog.kibble.util;
+package com.semantalytics.stardog.kibble.say;
 
 import com.semantalytics.stardog.kibble.AbstractStardogTest;
 import org.junit.*;
@@ -14,8 +14,8 @@ public class TestFromSpokenTime extends AbstractStardogTest {
     public void testFromSpokenTime() throws Exception {
 
            
-            final String aQuery = "prefix util: <" + UtilVocabulary.NAMESPACE + ">" +
-                    "select ?result where { bind(util:fromSpokenTime(\"next week\") as ?result) }";
+            final String aQuery = "prefix say: <" + UtilVocabulary.NAMESPACE + ">" +
+                    "select ?result where { bind(say:fromSpokenTime(\"next week\") as ?result) }";
 
             try (final TupleQueryResult aResult = connection.select(aQuery).execute()) {
 

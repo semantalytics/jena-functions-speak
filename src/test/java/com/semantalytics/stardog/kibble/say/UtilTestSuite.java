@@ -1,4 +1,4 @@
-package com.semantalytics.stardog.kibble.util;
+package com.semantalytics.stardog.kibble.say;
 
 import com.complexible.common.protocols.server.ServerException;
 import com.complexible.common.protocols.server.ServerOptions;

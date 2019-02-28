@@ -1,25 +1,25 @@
-package com.semantalytics.stardog.kibble.util;
+package com.semantalytics.stardog.kibble.say;
 
 import com.complexible.stardog.plan.filter.ExpressionEvaluationException;
 import com.complexible.stardog.plan.filter.ExpressionVisitor;
 import com.complexible.stardog.plan.filter.functions.AbstractFunction;
 import com.complexible.stardog.plan.filter.functions.UserDefinedFunction;
 import com.google.common.collect.Range;
-import org.ocpsoft.prettytime.PrettyTime;
 import org.openrdf.model.Value;
+import org.ocpsoft.prettytime.PrettyTime;
 
 import java.util.Date;
 
 import static com.complexible.common.rdf.model.Values.literal;
 
-public class SayPreciseTime extends AbstractFunction implements UserDefinedFunction {
+public class Time extends AbstractFunction implements UserDefinedFunction {
 
-    public SayPreciseTime() {
-        super(Range.closed(1, 2), UtilVocabulary.sayTime.stringValue());
+    public Time() {
+        super(Range.closed(1, 2), SayVocabulary.time.stringValue());
     }
 
-    private SayPreciseTime(final SayPreciseTime sayTime) {
-        super(sayTime);
+    private Time(final Time time) {
+        super(time);
     }
 
     @Override
@@ -30,12 +30,12 @@ public class SayPreciseTime extends AbstractFunction implements UserDefinedFunct
 
         final PrettyTime prettyTime = new PrettyTime(from);
 
-        return literal(prettyTime.format(prettyTime.calculatePreciseDuration(date)));
+        return literal(prettyTime.format(date));
     }
 
     @Override
-    public SayPreciseTime copy() {
-        return new SayPreciseTime(this);
+    public Time copy() {
+        return new Time(this);
     }
 
     @Override
@@ -45,6 +45,6 @@ public class SayPreciseTime extends AbstractFunction implements UserDefinedFunct
 
     @Override
     public String toString() {
-        return "sayPreciseTime";
+        return SayVocabulary.time.name();
     }
 }

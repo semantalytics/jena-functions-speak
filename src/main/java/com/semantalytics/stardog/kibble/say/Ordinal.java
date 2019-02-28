@@ -1,4 +1,4 @@
-package com.semantalytics.stardog.kibble.util;
+package com.semantalytics.stardog.kibble.say;
 
 import com.complexible.common.rdf.model.Values;
 import com.complexible.stardog.plan.filter.ExpressionEvaluationException;
@@ -10,30 +10,28 @@ import org.openrdf.model.Value;
 
 import java.util.Locale;
 
-public class SayNumber extends AbstractFunction implements UserDefinedFunction {
+public class Ordinal extends AbstractFunction implements UserDefinedFunction {
 
-    public SayNumber() {
-        super(1, UtilVocabulary.sayNumber.stringValue());
+    public Ordinal() {
+        super(1, SayVocabulary.ordinal.stringValue());
     }
 
-    private SayNumber(final SayNumber sayNumber) {
-        super(sayNumber);
+    private Ordinal(final Ordinal ordinal) {
+        super(ordinal);
     }
 
     @Override
     protected Value internalEvaluate(Value... values) throws ExpressionEvaluationException {
-        final int value = assertNumericLiteral(values[0]).intValue();
+        int number = assertNumericLiteral(values[0]).intValue();
         
-        //TODO Handle language tag
-        
-        final String number = new RuleBasedNumberFormat(Locale.US, RuleBasedNumberFormat.SPELLOUT).format(value);
+        String ordinal = new RuleBasedNumberFormat(Locale.US, RuleBasedNumberFormat.ORDINAL).format(number);
 
-        return Values.literal(number);
+        return Values.literal(ordinal);
     }
 
     @Override
-    public SayNumber copy() {
-        return new SayNumber(this);
+    public Ordinal copy() {
+        return new Ordinal(this);
     }
 
     @Override
@@ -43,6 +41,6 @@ public class SayNumber extends AbstractFunction implements UserDefinedFunction {
 
     @Override
     public String toString() {
-        return UtilVocabulary.sayNumber.name();
+        return SayVocabulary.ordinal.name();
     }
 }

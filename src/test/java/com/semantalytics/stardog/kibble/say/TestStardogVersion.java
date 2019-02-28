@@ -1,4 +1,4 @@
-package com.semantalytics.stardog.kibble.util;
+package com.semantalytics.stardog.kibble.say;
 
 import com.semantalytics.stardog.kibble.AbstractStardogTest;
 import org.junit.*;
@@ -15,8 +15,8 @@ public class TestStardogVersion  extends AbstractStardogTest {
     @Test
     public void testStardogVersion() throws Exception {
 
-            final String aQuery = "prefix util: <" + UtilVocabulary.NAMESPACE + "> " +
-                    "select ?result where { bind(util:stardogVersion() AS ?result) }";
+            final String aQuery = "prefix say: <" + UtilVocabulary.NAMESPACE + "> " +
+                    "select ?result where { bind(say:stardogVersion() AS ?result) }";
 
 
             try (final TupleQueryResult aResult = connection.select(aQuery).execute()) {

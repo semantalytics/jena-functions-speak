@@ -1,4 +1,4 @@
-package com.semantalytics.stardog.kibble.util;
+package com.semantalytics.stardog.kibble.say;
 
 import com.semantalytics.stardog.kibble.AbstractStardogTest;
 import org.junit.*;
@@ -20,8 +20,8 @@ public class TestBindPrevious  extends AbstractStardogTest {
     public void testBindPrev() throws Exception {
 
      
-            final String aQuery = "prefix util: <" + UtilVocabulary.bindPrev.NAMESPACE + "> " +
-                    "select ?result where { bind(util:bindPrev(?v) as ?result) values ?v {1 2 3 4 5} } order by ?v";
+            final String aQuery = "prefix say: <" + UtilVocabulary.bindPrev.NAMESPACE + "> " +
+                    "select ?result where { bind(say:bindPrev(?v) as ?result) values ?v {1 2 3 4 5} } order by ?v";
 
 
             List<String> results = new ArrayList(5);

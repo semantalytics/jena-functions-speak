@@ -1,20 +1,16 @@
-package com.semantalytics.stardog.kibble.util;
+package com.semantalytics.stardog.kibble.say;
 
 import com.complexible.stardog.Stardog;
 import com.complexible.stardog.api.Connection;
 import com.complexible.stardog.api.ConnectionConfiguration;
 import com.complexible.stardog.api.admin.AdminConnection;
 import com.complexible.stardog.api.admin.AdminConnectionConfiguration;
-import org.joda.time.Days;
-import org.joda.time.Period;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openrdf.query.TupleQueryResult;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.temporal.TemporalAmount;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -63,8 +59,8 @@ public class TestSpokenTime  {
 
             aConn.begin();
 
-            final String aQuery = "prefix util: <http://semantalytics.com/2016/03/ns/stardog/udf/util/> " +
-                    "select ?result where { bind(util:sayTime(\"since yesterday\") as ?result) } ";
+            final String aQuery = "prefix say: <http://semantalytics.com/2016/03/ns/stardog/udf/say/> " +
+                    "select ?result where { bind(say:sayTime(\"since yesterday\") as ?result) } ";
 
             try (final TupleQueryResult aResult = aConn.select(aQuery).execute()) {
 

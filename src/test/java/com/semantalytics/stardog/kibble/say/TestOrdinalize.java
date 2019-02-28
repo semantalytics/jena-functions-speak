@@ -1,18 +1,11 @@
-package com.semantalytics.stardog.kibble.util;
+package com.semantalytics.stardog.kibble.say;
 
-import com.complexible.common.rdf.model.Values;
-import com.complexible.stardog.Stardog;
-import com.complexible.stardog.api.Connection;
 import com.complexible.stardog.api.ConnectionConfiguration;
 import com.complexible.stardog.api.admin.AdminConnection;
 import com.complexible.stardog.api.admin.AdminConnectionConfiguration;
-import com.complexible.stardog.db.DatabaseOptions;
-import com.google.common.collect.ImmutableList;
 import com.semantalytics.stardog.kibble.AbstractStardogTest;
 import org.junit.*;
 import org.openrdf.query.TupleQueryResult;
-
-import java.time.LocalDateTime;
 
 import static org.junit.Assert.*;
 
@@ -57,8 +50,8 @@ public class TestOrdinalize extends AbstractStardogTest {
     @Test
     public void testOrdinalize() {
 
-            final String aQuery = "prefix util: <http://semantalytics.com/2017/09/ns/stardog/kibble/util/> " +
-                    "select ?result where { bind(util:ordinalize(1) as ?result) } ";
+            final String aQuery = "prefix say: <http://semantalytics.com/2017/09/ns/stardog/kibble/say/> " +
+                    "select ?result where { bind(say:ordinalize(1) as ?result) } ";
 
             try (final TupleQueryResult aResult = connection.select(aQuery).execute()) {
 
